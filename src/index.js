@@ -19,7 +19,6 @@ searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
-  clearGalleryContainer();
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
 
   if (pixabayImages.query === '') {
@@ -28,5 +27,6 @@ function onSearch(e) {
     );
   }
   createGalleryMarkup();
-  pixabayImages.resetPage();
+  pixabayImages.resetPage;
+  clearGalleryContainer();
 }

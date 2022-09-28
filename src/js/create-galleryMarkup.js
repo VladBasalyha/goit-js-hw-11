@@ -16,7 +16,7 @@ export default function createGalleryMarkup() {
       }) => {
         const markup = `
    <div class="photo-card">
-<img src="${largeImageURL}" alt="${tags}" width = 300 height = 240 loading="lazy" />
+<img src="${largeImageURL}" alt="${tags}" width = 400 height = 300 loading="lazy" />
 <div class="info">
   <p class="info-item">
     <b>Likes ${likes}</b>
