@@ -3,6 +3,7 @@ import createGalleryMarkup from './js/create-galleryMarkup';
 import Notiflix from 'notiflix';
 import simpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import clearGalleryContainer from './js/clear-gallery-container';
 
 export const gallery = document.querySelector('.gallery');
 
@@ -18,6 +19,7 @@ searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
+  clearGalleryContainer();
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
 
   if (pixabayImages.query === '') {
@@ -26,4 +28,5 @@ function onSearch(e) {
     );
   }
   createGalleryMarkup();
+  pixabayImages.resetPage();
 }
