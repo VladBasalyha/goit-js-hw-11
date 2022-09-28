@@ -1,6 +1,8 @@
 import PixabayImages from './js/fetch-gallerry';
 import createGalleryMarkup from './js/create-galleryMarkup';
 import Notiflix from 'notiflix';
+import simpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export const gallery = document.querySelector('.gallery');
 
