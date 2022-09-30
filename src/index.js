@@ -22,6 +22,7 @@ searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
+
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
 
   clearGalleryContainer();
@@ -32,6 +33,7 @@ function onSearch(e) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
+  sentinel.classList.add('loading');
 }
 const onEntry = entries => {
   entries.forEach(entry => {
@@ -42,7 +44,7 @@ const onEntry = entries => {
   });
 };
 const options = {
-  rootMargin: '500px',
+  rootMargin: '10px',
 };
 
 const observer = new IntersectionObserver(onEntry, options);

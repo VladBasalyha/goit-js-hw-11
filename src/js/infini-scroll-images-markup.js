@@ -6,8 +6,11 @@ export default function createScrollMarkup() {
   pixabayImages
     .getGalleryImages(pixabayImages.query)
     .then(response => {
-      if (response.data.totalHits > 40) {
-        sentinel.textContent = 'qwevfvsfvfdsfds';
+      if (
+        response.data.totalHits === gallery.children.length ||
+        response.data.totalHits < 40
+      ) {
+        sentinel.classList.remove('loading');
       }
       return response.data.hits;
     })
