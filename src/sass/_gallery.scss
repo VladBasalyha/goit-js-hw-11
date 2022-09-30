@@ -4,13 +4,14 @@
     justify-content: center;
     gap: 20px;
 }
-
-.sentinel {
-    position: relative;
-    top: 99%;
-    width: 50px;
+.finished {
+background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(184,184,184,1) 100%);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     height: 50px;
-    background: red
 }
 
 /* Absolute Center Spinner */
@@ -18,7 +19,7 @@
   margin: 0, 50%, 99%, 50%;
   z-index: 999;
   height: 2em;
-  width: 2em;
+  width: 1em;
   overflow: visible;
   margin: auto;
   top: 0;

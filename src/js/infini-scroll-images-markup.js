@@ -11,6 +11,8 @@ export default function createScrollMarkup() {
         response.data.totalHits < 40
       ) {
         sentinel.classList.remove('loading');
+        sentinel.classList.add('finished');
+        sentinel.textContent = 'Sorry, there no more images found';
       }
       return response.data.hits;
     })
