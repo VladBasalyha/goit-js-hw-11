@@ -2,6 +2,7 @@ import PixabayImages from './fetch-gallerry';
 import { pixabayImages } from '../index';
 import { gallery } from '../index';
 import Notiflix from 'notiflix';
+import { lightbox } from './gallery-slider';
 
 export default function createGalleryMarkup() {
   pixabayImages
@@ -30,7 +31,8 @@ export default function createGalleryMarkup() {
         }) => {
           const markup = `
    <div class="photo-card">
-<img src="${largeImageURL}" alt="${tags}" width = 400 height = 300 loading="lazy" />
+   <a href = ${webformatURL}> 
+<img src=${largeImageURL} alt="${tags}" width = 400 height = 300 loading="lazy" /> </a>
 <div class="info">
   <p class="info-item">
     <b>Likes: ${likes}</b>
@@ -47,6 +49,7 @@ export default function createGalleryMarkup() {
 </div>
 </div>`;
           gallery.insertAdjacentHTML('beforeend', markup);
+          lightbox.refresh();
         }
       )
     );

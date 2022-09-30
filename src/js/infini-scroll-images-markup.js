@@ -1,6 +1,7 @@
 import { pixabayImages } from '..';
 import Notiflix from 'notiflix';
 import { gallery } from '..';
+import { lightbox } from './gallery-slider';
 const sentinel = document.querySelector('.sentinel');
 export default function createScrollMarkup() {
   pixabayImages
@@ -29,7 +30,8 @@ export default function createScrollMarkup() {
         }) => {
           const markup = `
    <div class="photo-card">
-<img src="${largeImageURL}" alt="${tags}" width = 400 height = 300 loading="lazy" />
+   <a href = ${webformatURL}> 
+<img src=${largeImageURL} alt="${tags}" width = 400 height = 300 loading="lazy" /> </a>
 <div class="info">
   <p class="info-item">
     <b>Likes: ${likes}</b>
@@ -46,6 +48,7 @@ export default function createScrollMarkup() {
 </div>
 </div>`;
           gallery.insertAdjacentHTML('beforeend', markup);
+          lightbox.refresh();
         }
       )
     );

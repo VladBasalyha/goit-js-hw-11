@@ -1,4 +1,5 @@
 import PixabayImages from './js/fetch-gallerry';
+import { lightbox } from './js/gallery-slider';
 import createGalleryMarkup from './js/create-galleryMarkup';
 import Notiflix from 'notiflix';
 import simpleLightbox from 'simplelightbox';
@@ -28,6 +29,7 @@ function onSearch(e) {
   clearGalleryContainer();
   pixabayImages.resetPage();
   createGalleryMarkup();
+  lightbox.refresh();
   if (pixabayImages.query === '') {
     return Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
@@ -50,3 +52,9 @@ const options = {
 const observer = new IntersectionObserver(onEntry, options);
 observer.observe(sentinel);
 console.log(sentinel);
+const lightbox = new SimpleLightbox('.photo-card a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+console.log(lightbox);
