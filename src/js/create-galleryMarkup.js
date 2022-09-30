@@ -32,7 +32,7 @@ export default function createGalleryMarkup() {
   </p>
 </div>
 </div>`;
-        gallery.insertAdjacentHTML('afterbegin', markup);
+        gallery.insertAdjacentHTML('beforeend', markup);
       }
     )
   );

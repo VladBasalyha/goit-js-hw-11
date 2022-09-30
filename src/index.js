@@ -21,12 +21,23 @@ function onSearch(e) {
   e.preventDefault();
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
 
+  clearGalleryContainer();
+  pixabayImages.resetPage();
+  createGalleryMarkup();
   if (pixabayImages.query === '') {
     return Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
-  createGalleryMarkup();
-  pixabayImages.resetPage;
-  clearGalleryContainer();
 }
+
+/**
+ */
+let observer = new IntersectionObserver(function (entries) {
+  entries.forEach(entry => {
+    pixabayImages.incrementPage();
+    console.log(entry);
+  });
+});
+const sentinel = document.querySelector('.sentinel');
+observer.observe(sentinel);

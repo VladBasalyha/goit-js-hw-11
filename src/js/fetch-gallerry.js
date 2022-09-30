@@ -13,6 +13,9 @@ export default class PixabayImages {
   set query(newQuery) {
     this.searchQuery = newQuery;
   }
+  incrementPage() {
+    this.page += 1;
+  }
   resetPage() {
     this.page = 1;
   }
