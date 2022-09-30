@@ -25,14 +25,15 @@ function onSearch(e) {
   e.preventDefault();
   pixabayImages.resetPage();
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
+  if (pixabayImages.query === '') {
+    return Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.',
+      clearGalleryContainer()
+    );
+  }
   clearGalleryContainer();
   createGalleryMarkup();
   lightbox.refresh();
-  if (pixabayImages.query === '') {
-    return Notiflix.Notify.failure(
-      'Sorry, there are no images matching your search query. Please try again.'
-    );
-  }
   sentinel.classList.add('loading');
 }
 const onEntry = entries => {
