@@ -23,11 +23,11 @@ searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
+  pixabayImages.resetPage();
 
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
 
   clearGalleryContainer();
-  pixabayImages.resetPage();
   createGalleryMarkup();
   lightbox.refresh();
   if (pixabayImages.query === '') {
@@ -46,7 +46,7 @@ const onEntry = entries => {
   });
 };
 const options = {
-  rootMargin: '10px',
+  rootMargin: '1000px',
 };
 
 const observer = new IntersectionObserver(onEntry, options);
