@@ -24,9 +24,7 @@ searchForm.addEventListener('submit', onSearch);
 function onSearch(e) {
   e.preventDefault();
   pixabayImages.resetPage();
-
   pixabayImages.query = e.currentTarget.elements.searchQuery.value;
-
   clearGalleryContainer();
   createGalleryMarkup();
   lightbox.refresh();
