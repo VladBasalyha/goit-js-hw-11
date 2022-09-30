@@ -49,10 +49,10 @@ const options = {
 
 const observer = new IntersectionObserver(onEntry, options);
 observer.observe(sentinel);
-console.log(sentinel);
-const lightbox = new SimpleLightbox('.photo-card a', {
-  captions: true,
-  captionsData: 'alt',
-  captionDelay: 250,
-});
-console.log(lightbox);
+// console.log(sentinel);
+// const lightbox = new SimpleLightbox('.photo-card a', {
+//   captions: true,
+//   captionsData: 'alt',
+//   captionDelay: 250,
+// });
+// console.log(lightbox);
