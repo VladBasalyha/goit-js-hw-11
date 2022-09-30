@@ -1,20 +1,14 @@
-import PixabayImages from './fetch-gallerry';
-import { pixabayImages } from '../index';
-import { gallery } from '../index';
+import { pixabayImages } from '..';
 import Notiflix from 'notiflix';
-
-export default function createGalleryMarkup() {
+import { gallery } from '..';
+const sentinel = document.querySelector('.sentinel');
+export default function createScrollMarkup() {
   pixabayImages
     .getGalleryImages(pixabayImages.query)
     .then(response => {
-      if (response.data.totalHits === 0) {
-        return Notiflix.Notify.failure(
-          `Sorry, there are no images matching your search query. Please try again.`
-        );
+      if (response.data.totalHits > 40) {
+        sentinel.textContent = 'qwevfvsfvfdsfds';
       }
-      Notiflix.Notify.success(
-        `Hooray! We found ${response.data.totalHits} images.`
-      );
       return response.data.hits;
     })
     .then(data =>

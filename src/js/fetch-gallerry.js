@@ -20,20 +20,8 @@ export default class PixabayImages {
     this.page = 1;
   }
   getGalleryImages(name) {
-    return axios
-      .get(
-        `https://pixabay.com/api/?key=${API_KEY}&q=${name}&image_type=photo&orientation=horizontal&safesearch=false&per_page=40&page=${this.page}`
-      )
-      .then(response => {
-        if (response.data.totalHits === 0) {
-          return Notiflix.Notify.failure(
-            `Sorry, there are no images matching your search query. Please try again.`
-          );
-        }
-        Notiflix.Notify.success(
-          `Hooray! We found ${response.data.totalHits} images.`
-        );
-        return response.data.hits;
-      });
+    return axios.get(
+      `https://pixabay.com/api/?key=${API_KEY}&q=${name}&image_type=photo&orientation=horizontal&safesearch=false&per_page=40&page=${this.page}`
+    );
   }
 }
