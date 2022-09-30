@@ -1,8 +1,49 @@
+img {
+  width: 100%;
+  border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    padding-top: 100px;
+}
+
+.photo-card {
+      box-shadow: 0 3px 5px rgb(0 4 56 / 50%);
+      border-radius: 3%;
+          width: 400px;
+    max-width: 400px;
+}
+      
+
+.info {
+  margin-left: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: auto;
+}
+.info-item {
+ font-size: 1rem;
+}
+
+.search-form {
+    width: 100%;
+    background: linear-gradient(90deg,#050b5c,#1a73e8);
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 5px rgb(0 4 56 / 50%);
 }
 .finished {
 background: rgb(255,255,255);
